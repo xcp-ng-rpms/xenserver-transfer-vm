@@ -1,7 +1,7 @@
 Summary: XenServer Transfer VM
 Name: xenserver-transfer-vm
 Version: 7.1.3
-Release: 1
+Release: 1%{dist}
 License: GPLv2
 Vendor: Citrix Systems, Inc.
 Group: Development/Libraries

@@ -1,15 +1,20 @@
 Summary: XenServer Transfer VM
 Name: xenserver-transfer-vm
-Version: 7.1.3
+Version: 7.1.4
 Release: 1
 License: GPLv2
 Vendor: Citrix Systems, Inc.
 Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}
 BuildArch: noarch
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=%{version}&prefix=%{name}-%{version}&format=tar.gz#/%{name}-%{version}.tar.gz 
+
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.4&prefix=xenserver-transfer-vm-7.1.4&format=tar.gz#/xenserver-transfer-vm-7.1.4.tar.gz
 Source1: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.1/transfer-vm.tar
 Source2: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.1/transfer-vm-sources.tar.gz
+
+
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.4&prefix=xenserver-transfer-vm-7.1.4&format=tar.gz#/xenserver-transfer-vm-7.1.4.tar.gz) = d51870f2a0f4bbb1847ed17201b1c09ce5ac459a
+
 
 %define tvm_dir /opt/xensource/packages/files/transfer-vm
 %define xapi_plugins /etc/xapi.d/plugins
@@ -69,5 +74,8 @@ touch /opt/xensource/packages/files/transfer-vm/rpm_change
 exit 0
 
 %changelog
+* Wed Oct 31 2018 Liang Dai <liang.dai1@citrix.com> - 7.1.4-1
+- CA-293362: Fail to communicate with the plugin. (CERTIFICATE_VERIFY_FAILED)
+
 * Wed Oct 19 2016 Rob Dobson <rob.dobson@citrix.com> - 7.1.0-1 
 - Initial repack of the Transfer VM

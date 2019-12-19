@@ -1,6 +1,6 @@
 Summary: XenServer Transfer VM
 Name: xenserver-transfer-vm
-Version: 7.1.4
+Version: 7.1.5
 Release: 1
 License: GPLv2
 Vendor: Citrix Systems, Inc.
@@ -8,12 +8,12 @@ Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}
 BuildArch: noarch
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.4&prefix=xenserver-transfer-vm-7.1.4&format=tar.gz#/xenserver-transfer-vm-7.1.4.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.5&prefix=xenserver-transfer-vm-7.1.5&format=tar.gz#/xenserver-transfer-vm-7.1.5.tar.gz
 Source1: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.1/transfer-vm.tar
 Source2: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.1/transfer-vm-sources.tar.gz
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.4&prefix=xenserver-transfer-vm-7.1.4&format=tar.gz#/xenserver-transfer-vm-7.1.4.tar.gz) = d51870f2a0f4bbb1847ed17201b1c09ce5ac459a
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.5&prefix=xenserver-transfer-vm-7.1.5&format=tar.gz#/xenserver-transfer-vm-7.1.5.tar.gz) = d3d2834be3c705e7712f10ab90fe332c904f5169
 
 
 %define tvm_dir /opt/xensource/packages/files/transfer-vm
@@ -74,6 +74,9 @@ touch /opt/xensource/packages/files/transfer-vm/rpm_change
 exit 0
 
 %changelog
+* Tue Oct 22 2019 Deli Zhang <deli.zhang@citrix.com> - 7.1.5-1
+- CA-329079: Fix ip address validation issue
+
 * Wed Oct 31 2018 Liang Dai <liang.dai1@citrix.com> - 7.1.4-1
 - CA-293362: Fail to communicate with the plugin. (CERTIFICATE_VERIFY_FAILED)
 

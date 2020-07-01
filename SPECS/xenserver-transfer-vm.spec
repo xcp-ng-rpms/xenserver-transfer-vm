@@ -1,6 +1,6 @@
 Summary: XenServer Transfer VM
 Name: xenserver-transfer-vm
-Version: 7.1.5
+Version: 7.1.8
 Release: 1
 License: GPLv2
 Vendor: Citrix Systems, Inc.
@@ -8,12 +8,12 @@ Group: Development/Libraries
 BuildRoot: %{_tmppath}/%{name}
 BuildArch: noarch
 
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.5&prefix=xenserver-transfer-vm-7.1.5&format=tar.gz#/xenserver-transfer-vm-7.1.5.tar.gz
-Source1: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.1/transfer-vm.tar
-Source2: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.1/transfer-vm-sources.tar.gz
+Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.8&prefix=xenserver-transfer-vm-7.1.8&format=tar.gz#/xenserver-transfer-vm-7.1.8.tar.gz
+Source1: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.4/transfer-vm.tar
+Source2: https://repo.citrite.net/xs-local-contrib/citrix/transfer-vm/1.0.4/transfer-vm-sources.tar.bz2
 
 
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.5&prefix=xenserver-transfer-vm-7.1.5&format=tar.gz#/xenserver-transfer-vm-7.1.5.tar.gz) = d3d2834be3c705e7712f10ab90fe332c904f5169
+Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/transfer-vm/archive?at=7.1.8&prefix=xenserver-transfer-vm-7.1.8&format=tar.gz#/xenserver-transfer-vm-7.1.8.tar.gz) = 376151e2f280d1cacdb10b919fd11ea0fe3da266
 
 
 %define tvm_dir /opt/xensource/packages/files/transfer-vm
@@ -74,6 +74,15 @@ touch /opt/xensource/packages/files/transfer-vm/rpm_change
 exit 0
 
 %changelog
+* Mon Mar 9 2020 Xueqing Zhang <xueqing.zhang@citrix.com> - 7.1.8-1
+- CP-32724: Remove the prev TLS1.2 protocols for transfer VM
+
+* Wed Feb 26 2020 Xueqing Zhang <xueqing.zhang@citrix.com> - 7.1.7-1
+- CA-330736: Transfer VM use plain text credential in source code
+
+* Mon Dec 02 2019 Xihuan Yang <xihuan.yang@citrix.com> - 7.1.6-1
+- CA-330380: Fix uninstall template failed when sr is connecet to more than one pbd
+
 * Tue Oct 22 2019 Deli Zhang <deli.zhang@citrix.com> - 7.1.5-1
 - CA-329079: Fix ip address validation issue
 
